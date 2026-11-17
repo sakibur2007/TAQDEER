@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MS Autoflexi – Your stores. Your place.</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="promo">New collections are in — get an extra <b>10% off</b> everything. Free shipping pass for 15 days.</div>
+
+<header>
+  <div class="wrap top">
+    <a class="logo" href="#top">MS <span>Autoflexi</span><small>Your stores. Your place.</small></a>
+    <form class="search" onsubmit="event.preventDefault();doSearch()">
+      <input id="q" type="search" placeholder="Search for products, brands and more" aria-label="Search">
+      <button type="submit">Search</button>
+    </form>
+    <div class="actions">
+      <a class="btn" href="#contact">Contact us</a>
+      <button class="btn cartbtn" onclick="toggleCart(true)">Cart<span id="count">0</span></button>
+    </div>
+  </div>
+  <nav><div class="wrap"><ul class="menu" id="menu"></ul></div></nav>
+</header>
+
+<main class="wrap" id="top">
+  <section class="hero">
+    <div class="slider" id="slider" style="background:#0b6e4f">
+      <div class="slide on" style="background:linear-gradient(120deg,#0b6e4f,#1c9a6f)"><h2>Flat 50% discount</h2><p>Hot offer today only on top electronics.</p><a class="cta" href="#products" onclick="setTab('Electronics')">Shop now</a><span class="big">🎧</span></div>
+      <div class="slide" style="background:linear-gradient(120deg,#7a2e8f,#b24fc9)"><h2>Our latest fashion editorials</h2><p>Fresh looks for every season.</p><a class="cta" href="#products" onclick="setTab('Fashion')">Explore</a><span class="big">👗</span></div>
+      <div class="slide" style="background:linear-gradient(120deg,#c2410c,#f08a24)"><h2>End of season sale</h2><p>Home, sports and gifts at their lowest.</p><a class="cta" href="#products" onclick="setTab('Home')">See deals</a><span class="big">🛋️</span></div>
+      <div class="dots" id="dots"></div>
+    </div>
+    <div class="side">
+      <a class="tile" style="background:#1d4ed8" href="#products"><h3>Smart phones</h3><span>From $70</span><em>📱</em></a>
+      <a class="tile" style="background:#be185d" href="#products"><h3>Gifts &amp; toys</h3><span>Up to 20% off</span><em>🧸</em></a>
+    </div>
+  </section>
+
+  <section class="perks">
+    <div class="perk"><i>🚚</i><div><b>Free delivery</b><small>On orders over $50</small></div></div>
+    <div class="perk"><i>🎧</i><div><b>Customer care</b><small>Help every day, 9am–9pm</small></div></div>
+    <div class="perk"><i>✅</i><div><b>Good quality</b><small>Checked before dispatch</small></div></div>
+    <div class="perk"><i>↩️</i><div><b>Easy returns</b><small>30-day return window</small></div></div>
+  </section>
+
+  <section id="products">
+    <div class="sec-head"><h2>Featured products</h2><div class="tabs" id="tabs"></div></div>
+    <div class="grid" id="grid"></div>
+  </section>
+
+  <section class="banners">
+    <div class="banner" style="background:#0f766e"><b>Top 10 trends for you</b>Flat 20% off<a href="#products">Shop now</a></div>
+    <div class="banner" style="background:#b91c1c"><b>Sunday special discount</b>Flat 40% off<a href="#products">Shop now</a></div>
+    <div class="banner" style="background:#4338ca"><b>Latest designs for you</b>Hurry, limited stock<a href="#products">Shop now</a></div>
+  </section>
+
+  <section class="deal">
+    <div>
+      <h2>Mega deal of the week</h2>
+      <p>Don't miss out — the offer ends in:</p>
+      <div class="timer"><div><b id="d">0</b><small>Days</small></div><div><b id="h">0</b><small>Hours</small></div><div><b id="m">0</b><small>Min</small></div><div><b id="s">0</b><small>Sec</small></div></div>
+    </div>
+    <div class="emoji">🔥</div>
+  </section>
+
+  <section>
+    <div class="sec-head"><h2>Deals of the day</h2></div>
+    <div class="chips" id="chips"></div>
+  </section>
+</main>
+
+<section class="news" id="contact">
+  <div class="wrap">
+    <div><b style="font-size:1.2rem">Sign up for email and get 25% off</b><br>Offers, new arrivals and no spam.</div>
+    <form onsubmit="event.preventDefault();toast('Thanks! Check your inbox for your code.');this.reset()">
+      <input type="email" required placeholder="Your email address" aria-label="Email">
+      <button>Subscribe</button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div><div class="logo" style="color:#fff">MS <span style="color:#4ade80">Autoflexi</span></div>
+        <ul style="margin-top:10px"><li>123 San Sebastian, New York City, USA</li><li>+1 333 222 3333</li><li><a href="mailto:mail@example.com">mail@example.com</a></li></ul></div>
+      <div><h4>Company</h4><ul><li><a href="#">About us</a></li><li><a href="#">Marketplace</a></li><li><a href="#">Core values</a></li><li><a href="#">Privacy policy</a></li></ul></div>
+      <div><h4>Services</h4><ul><li><a href="#contact">Contact us</a></li><li><a href="#">Returns</a></li><li><a href="#">FAQ</a></li><li><a href="#">Order status</a></li></ul></div>
+      <div><h4>Payment methods</h4><ul><li>Net banking</li><li>Cash on delivery</li><li>EMI conversion</li><li>E-gift voucher</li><li>Debit / credit card</li></ul></div>
+    </div>
+    <p class="copy">© <span id="yr"></span> MS Autoflexi. All rights reserved.</p>
+  </div>
+</footer>
+
+<div class="shade" onclick="toggleCart(false)"></div>
+<aside class="drawer" aria-label="Shopping cart">
+  <header><b style="font-size:1.2rem">Your cart</b><button class="btn" onclick="toggleCart(false)">Close</button></header>
+  <div class="items" id="items"></div>
+  <div class="foot"><div class="row"><span>Total</span><span id="total">$0</span></div><button class="cta" style="border:0" onclick="checkout()">Checkout</button></div>
+</aside>
+<div class="toast" id="toast"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
